@@ -73,6 +73,10 @@ public class menu {
 					
 					averageStormCat averageStormCat = new averageStormCat();
 					
+					sortByCat sort = new sortByCat();
+					
+					sort.process();
+					
 					averageStormCat.process();
 					
 					// averageStormCat();

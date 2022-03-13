@@ -39,20 +39,21 @@ public class readHurricaneFile {
 			return null;
 			
 		}
+
 		
-		public String processHurricaneFile() {
+		public String processHurricaneFileDate() {
 
 			try {
-			
-			File hurricaneFile = new File(this.hurricaneFileLocation);
+						File hurricaneFile = new File(this.hurricaneFileLocation);
 			Scanner readerScanner = new Scanner(hurricaneFile);
+			readerScanner.useDelimiter(",|/");
 			
-			while(readerScanner.hasNextLine()) {
+			while(readerScanner.hasNext()) {
 				
-				hurricaneInfo = readHurricanes(readerScanner);
-				
-				System.out.println(hurricaneInfo);
-		
+				readerScanner.next();
+	
+				System.out.println(readerScanner.next());
+	
 			}
 			
 			readerScanner.close();
@@ -60,10 +61,8 @@ public class readHurricaneFile {
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
-		}	
-			
+		}				
 			return null;
-			
 		}
 		
 		// runs all current methods
@@ -71,7 +70,7 @@ public class readHurricaneFile {
 
 		public void run() {
 			
-		processHurricaneFile();
+		processHurricaneFileDate();
 
 		}
 		
